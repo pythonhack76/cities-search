@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from tkinter.messagebox import showinfo
+from tkinter.messagebox import askyesno, showinfo
 
 # root window
 root = tk.Tk()
@@ -31,6 +31,14 @@ def close_login():
     )
     root.destroy()
 
+def conferma():
+    risposta = askyesno(title='conferma',
+                        message='Sei sicuro di chiudere la finestra?')
+    if risposta:
+        root.destroy()
+
+
+
 
 # Sign in frame
 signin = ttk.Frame(root)
@@ -57,8 +65,8 @@ login_button = ttk.Button(signin, text="Login", command=login_clicked)
 login_button.pack(fill='x', expand=True, pady=10)
 
 # close button
-close_button = ttk.Button(signin, text="Close", command=close_login)
-close_button.pack(fill='x', expand=True, pady=20)
+close_button = ttk.Button(signin, text="Close", command=conferma)
+close_button.pack(fill='x', expand=True, padx=10, pady=10)
 
 
 root.mainloop()
