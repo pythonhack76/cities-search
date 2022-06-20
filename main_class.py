@@ -17,7 +17,7 @@ class App(tk.Tk):
 
 
         #New button
-        new_button = ttk.Button(self, text="New", command=self.show)
+        new_button = ttk.Button(self, text="Show", command=self.show)
         new_button.pack(expand=True)
 
     def confirm(self):
@@ -29,7 +29,6 @@ class App(tk.Tk):
     def show(self):
         risultato = Text(app, height=10)
         risultato.pack() 
-
         risultato.insert('1.0', 'messaggio')
 
 
